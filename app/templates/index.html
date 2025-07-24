@@ -1,0 +1,225 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- Hero Section -->
+<section
+  class="hero"
+  style="
+    background-image: url('https://plus.unsplash.com/premium_photo-1674837816247-130ad8119752?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9iaWxlJTIwYmFydGVuZGluZ3xlbnwwfHwwfHx8MA%3D%3D');
+  "
+>
+  <div class="overlay"></div>
+  <div class="hero-content text-center text-light">
+    <h1 class="display-3 fw-bold">Tragos Crafted</h1>
+    <p class="lead">Luxury Mobile Bartending | Events Starting at $500</p>
+    <a href="#booking" class="btn btn-accent btn-lg">Request Your Quote</a>
+  </div>
+</section>
+
+<section id="services" class="py-5">
+  <div class="container text-center">
+    <h2 class="section-title mb-5">Our Premium Packages</h2>
+    <div class="services-wrapper">
+      <!-- Essentials Package -->
+      <div class="glass-card service-left">
+        <h3>Essentials</h3>
+        <p>
+          Starting at $500 | Perfect for small house parties or intimate
+          gatherings and events. Includes up to 5 hours of bartending service,
+          bar setup, and excellent vibes for you event. <br /><strong
+            >*Alcohol provided by client.*</strong
+          >
+        </p>
+      </div>
+
+      <!-- Signature Package -->
+      <div class="glass-card service-center featured">
+        <h3>Signature</h3>
+        <p>
+          Starting at $1,000 | Ideal for bachelor/bachelorette parties,
+          corporate events, and mid-sized celebrations. Includes aesthetic bar
+          setup, custom menu consultation, and extended service. <br /><strong
+            >*Alcohol provided by client.*</strong
+          >
+        </p>
+      </div>
+
+      <!-- Luxury Package -->
+      <div class="glass-card service-right">
+        <h3>Luxury</h3>
+        <p>
+          Starting at $1,500 | Designed for weddings and high-end events.
+          Features fully tailored cocktail menu, premium aesthetic styling, and
+          optional extra bartender for flawless execution. <br /><strong
+            >*Alcohol provided by client.*</strong
+          >
+        </p>
+      </div>
+    </div>
+    <p class="services-note mt-4">
+      *All services follow a dry-hire model (client supplies alcohol). Pricing
+      varies based on guest count, service hours, and optional add-ons. Request
+      your custom quote below.
+    </p>
+  </div>
+</section>
+
+<!-- Booking Form -->
+<section id="booking" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Request Your Quote</h2>
+    <form
+      method="POST"
+      action="/book"
+      class="booking-form shadow-lg p-4 rounded"
+    >
+      <div class="row mb-3">
+        <div class="col-md-6 mb-3">
+          <input
+            type="text"
+            name="full_name"
+            class="form-control"
+            placeholder="Full Name *"
+            required
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Email *"
+            required
+          />
+        </div>
+      </div>
+
+      <input
+        type="tel"
+        name="phone"
+        class="form-control mb-3"
+        placeholder="Phone Number *"
+        required
+      />
+
+      <select name="event_type" class="form-select mb-3" required>
+        <option value="">Event Type</option>
+        <option>Wedding</option>
+        <option>Corporate Event</option>
+        <option>Bachelor/Bachelorette</option>
+        <option>Birthday Party</option>
+        <option>Other</option>
+      </select>
+
+      <div class="row mb-3">
+        <div class="col">
+          <input type="date" name="event_date" class="form-control" required />
+        </div>
+        <div class="col">
+          <input type="time" name="event_time" class="form-control" required />
+        </div>
+      </div>
+
+      <input
+        type="number"
+        name="guests"
+        class="form-control mb-3"
+        placeholder="Number of Guests *"
+        required
+      />
+      <input
+        type="number"
+        name="hours"
+        class="form-control mb-3"
+        placeholder="Estimated Hours of Service *"
+        required
+      />
+
+      <!-- Add-ons -->
+      <label class="form-label mt-3">Optional Add-Ons:</label>
+      <div class="add-ons-wrapper mb-3">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="addons"
+            value="Custom Menu Design"
+            id="addon1"
+          />
+          <label class="form-check-label" for="addon1"
+            >Custom Menu Design</label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="addons"
+            value="Glassware Rental"
+            id="addon2"
+          />
+          <label class="form-check-label" for="addon2">Glassware Rental</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="addons"
+            value="Extra Bartender"
+            id="addon3"
+          />
+          <label class="form-check-label" for="addon3">Extra Bartender</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="addons"
+            value="Aesthetic Bar Setup"
+            id="addon4"
+          />
+          <label class="form-check-label" for="addon4"
+            >Aesthetic Bar Setup (LED lights, garnish display, theme
+            alignment)</label
+          >
+        </div>
+      </div>
+
+      <p class="small text-muted mb-3">
+        *Tragos Crafted does not provide alcohol. Clients supply spirits; we’ll
+        guide you on selections and quantities.
+      </p>
+
+      <textarea
+        name="notes"
+        class="form-control mb-3"
+        rows="4"
+        placeholder="Special Requests or Notes"
+      ></textarea>
+
+      <button type="submit" class="btn btn-accent w-100">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 text-center bg-dark text-light">
+  <h2 class="mb-3">Connect with TragosCrafted</h2>
+  <p>
+    Email:
+    <a href="mailto:contact@tragoscrafted.com" class="text-accent"
+      >info@tragoscrafted.com</a
+    >
+  </p>
+  <p>
+    Follow us:
+    <a href="https://www.instagram.com/betoo__04/" class="text-accent"
+      >Instagram</a
+    >
+    |
+    <a href="https://www.tiktok.com/@thebetoproject" class="text-accent"
+      >TikTok</a
+    >
+  </p>
+</section>
+
+{% endblock %}
