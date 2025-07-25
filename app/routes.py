@@ -20,6 +20,7 @@ def book():
         "event_time": request.form.get("event_time"),
         "guests": request.form.get("guests"),
         "budget": request.form.get("budget"),
+        "addons": request.form.getlist("addons"),  # ✅ Handles multiple add-ons
         "notes": request.form.get("notes"),
     }
 

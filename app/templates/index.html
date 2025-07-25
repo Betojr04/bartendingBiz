@@ -134,6 +134,15 @@
         required
       />
 
+      <!-- ✅ Budget Field -->
+      <input
+        type="text"
+        name="budget"
+        class="form-control mb-3"
+        placeholder="Estimated Budget (e.g., $500 - $1500)"
+        required
+      />
+
       <!-- Add-ons -->
       <label class="form-label mt-3">Optional Add-Ons:</label>
       <div class="add-ons-wrapper mb-3">
@@ -178,9 +187,18 @@
             id="addon4"
           />
           <label class="form-check-label" for="addon4"
-            >Aesthetic Bar Setup (LED lights, garnish display, theme
-            alignment)</label
+            >Aesthetic Bar Setup</label
           >
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="addons"
+            value="Cocktail Class"
+            id="addon5"
+          />
+          <label class="form-check-label" for="addon5">Cocktail Class</label>
         </div>
       </div>
 

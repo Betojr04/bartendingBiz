@@ -12,5 +12,6 @@ class Booking(db.Model):
     event_time = db.Column(db.String(20), nullable=False)
     guests = db.Column(db.Integer, nullable=False)
     budget = db.Column(db.String(50), nullable=False)
-    notes = db.Column(db.Text, nullable=False)
+    addons = db.Column(db.Text, nullable=True)
+    notes = db.Column(db.Text, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
